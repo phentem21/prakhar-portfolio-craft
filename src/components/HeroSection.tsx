@@ -46,18 +46,13 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8">
-          {/* Enhanced Profile Image with 3D effect */}
+          {/* Simple Profile Image */}
           <div className="flex justify-center mb-8">
-            <div className="relative group">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-r from-primary to-accent p-1 group-hover:scale-110">
-                <img 
-                  src={photo} 
-                  alt="Prakhar Malviya" 
-                  className="w-full h-full rounded-full object-cover transform group-hover:scale-105"
-                />
-              </div>
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-full blur opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
+            <img 
+              src={photo} 
+              alt="Prakhar Malviya" 
+              className="w-32 h-32 rounded-full object-cover"
+            />
           </div>
 
           {/* Enhanced Name and Title with 3D text effect */}
