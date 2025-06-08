@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Download, Mail } from "lucide-react";
 
+import photo from "./photo.png"
+
 const HeroSection = () => {
   const [currentRole, setCurrentRole] = useState(0);
   const roles = [
@@ -49,7 +51,7 @@ const HeroSection = () => {
             <div className="relative group">
               <div className="w-32 h-32 rounded-full bg-gradient-to-r from-primary to-accent p-1 animate-glow group-hover:scale-110 transition-transform duration-500">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" 
+                  src={photo} 
                   alt="Prakhar Malviya" 
                   className="w-full h-full rounded-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
