@@ -49,11 +49,11 @@ const HeroSection = () => {
           {/* Enhanced Profile Image with 3D effect */}
           <div className="flex justify-center mb-8">
             <div className="relative group">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-r from-primary to-accent p-1 group-hover:scale-110 transition-transform duration-500">
+              <div className="w-32 h-32 rounded-full bg-gradient-to-r from-primary to-accent p-1 group-hover:scale-110">
                 <img 
                   src={photo} 
                   alt="Prakhar Malviya" 
-                  className="w-full h-full rounded-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full rounded-full object-cover transform group-hover:scale-105"
                 />
               </div>
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-full blur opacity-75 animate-pulse group-hover:opacity-100 transition-opacity duration-300"></div>
