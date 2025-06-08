@@ -96,6 +96,10 @@
     @apply bg-background text-foreground font-inter;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   .glass {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -106,6 +110,18 @@
     background: rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .light .glass {
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .light .glass-light {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
 
@@ -118,24 +134,115 @@
     animation: glow 2s ease-in-out infinite alternate;
   }
 
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(-5px) rotate(-1deg); }
   }
 
   @keyframes glow {
-    from { box-shadow: 0 0 20px rgba(34, 211, 238, 0.5); }
-    to { box-shadow: 0 0 30px rgba(34, 211, 238, 0.8); }
+    from { 
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+      filter: brightness(1);
+    }
+    to { 
+      box-shadow: 0 0 30px rgba(34, 211, 238, 0.8), 0 0 40px rgba(34, 211, 238, 0.3);
+      filter: brightness(1.1);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(34, 211, 238, 0.8), 0 0 60px rgba(34, 211, 238, 0.4);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 
   .gradient-bg {
-    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 10s ease infinite;
+  }
+
+  .light .gradient-bg {
+    background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 50%, #F8FAFC 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 10s ease infinite;
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #22D3EE 0%, #38BDF8 100%);
+    background: linear-gradient(135deg, #22D3EE 0%, #38BDF8 50%, #0EA5E9 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .animate-typewriter {
+    overflow: hidden;
+    border-right: 2px solid;
+    white-space: nowrap;
+    animation: typewriter 3s steps(30) infinite;
+  }
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .glass-hover {
+    transition: all 0.3s ease;
+  }
+
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .light .glass-hover:hover {
+    background: rgba(0, 0, 0, 0.1);
   }
 }
