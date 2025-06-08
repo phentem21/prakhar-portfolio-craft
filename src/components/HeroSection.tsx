@@ -45,7 +45,7 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center space-y-8 animate-fade-in">
+        <div className="text-center space-y-8">
           {/* Enhanced Profile Image with 3D effect */}
           <div className="flex justify-center mb-8">
             <div className="relative group">
@@ -56,7 +56,7 @@ const HeroSection = () => {
                   className="w-full h-full rounded-full object-cover transform group-hover:scale-105"
                 />
               </div>
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-full blur opacity-75 animate-pulse group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-full blur opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           </div>
 
